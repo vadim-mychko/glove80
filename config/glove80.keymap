@@ -7,90 +7,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define LE4  0
-#define LE3  1
-#define LE2  2
-#define LE1  3
-#define LE0  4
-#define RE0  5
-#define RE1  6
-#define RE2  7
-#define RE3  8
-#define RE4  9
-#define LN5 10
-#define LN4 11
-#define LN3 12
-#define LN2 13
-#define LN1 14
-#define LN0 15
-#define RN0 16
-#define RN1 17
-#define RN2 18
-#define RN3 19
-#define RN4 20
-#define RN5 21
-#define LT5 22
-#define LT4 23
-#define LT3 24
-#define LT2 25
-#define LT1 26
-#define LT0 27
-#define RT0 28
-#define RT1 29
-#define RT2 30
-#define RT3 31
-#define RT4 32
-#define RT5 33
-#define LH5 34
-#define LH4 35
-#define LH3 36
-#define LH2 37
-#define LH1 38
-#define LH0 39
-#define RH0 40
-#define RH1 41
-#define RH2 42
-#define RH3 43
-#define RH4 44
-#define RH5 45
-#define LB5 46
-#define LB4 47
-#define LB3 48
-#define LB2 49
-#define LB1 50
-#define LB0 51
-#define LBT2 52
-#define LBT1 53
-#define LBT0 54
-#define RBT0 55
-#define RBT1 56
-#define RBT2 57
-#define RB0 58
-#define RB1 59
-#define RB2 60
-#define RB3 61
-#define RB4 62
-#define RB5 63
-#define LTH5 64
-#define LTH4 65
-#define LTH3 66
-#define LTH2 67
-#define LTH1 68
-#define LTH0 69
-#define RTH0 70
-#define RTH1 71
-#define RTH2 72
-#define RTH3 73
-#define RTH4 74
-#define RTH5 75
-#define RTH6 76
-#define RTH7 77
-#define RTH8 78
-#define RTH9 79
-
-#define KEYS_L LE4 LE3 LE2 LE1 LE0 LN5 LN4 LN3 LN2 LN1 LN0 LT5 LT4 LT3 LT2 LT1 LT0 LH5 LH4 LH3 LH2 LH1 LH0 LB5 LB4 LB3 LB2 LB1 LB0 LBT2 LBT1 LBT0
-#define KEYS_R RE0 RE1 RE2 RE3 RE4 RN0 RN1 RN2 RN3 RN4 RN5 RT0 RT1 RT2 RT3 RT4 RT5 RH0 RH1 RH2 RH3 RH4 RH5 RBT0 RBT1 RBT2 RB0 RB1 RB2 RB3 RB4 RB5
-#define THUMBS LTH5 LTH4 LTH3 LTH2 LTH1 LTH0 RTH0 RTH1 RTH2 RTH3 RTH4 RTH5 RTH6 RTH7 RTH8 RTH9
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 34 35 36 37 38 39 46 47 48 49 50 51 64 65 66 67 68
+#define KEYS_R 5 6 7 8 9 16 17 18 19 20 21 28 29 30 31 32 33 40 41 42 43 44 45 58 59 60 61 62 63 75 76 77 78 79
+#define THUMBS 52 53 54 55 56 57 69 70 71 72 73 74
 
 / {
     behaviors {
@@ -124,13 +43,101 @@
 
         default_layer {
             bindings = <
-            &none &none &none &none &none                                       &none &none &none &none &none
-            &none &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                            &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &none
-            &none &kp B &kp L &kp D &kp C &kp V                                 &kp J &kp Y &kp O &kp U &kp COMMA &none
-            &none &hml LGUI N &hml LALT R &hml LCTRL T &hml LSHFT S &kp G       &kp P &hmr RSHFT H &hmr RCTRL A &hmr RALT E &hmr RGUI I &none
-            &none &kp X &kp Q &kp M &kp W &kp Z &none &none &none               &none &none &none &kp K &kp F &kp SQT &kp SEMI &kp DOT &none
+            &none            // Left edge row, pinky
+            &none            // Left edge row, ring
+            &none            // Left edge row, middle
+            &none            // Left edge row, index
+            &none            // Left edge row, inner
 
-            &none &none &none &none &none &kp SPACE &none &none                 &none &kp RET &kp BSPC &none &none &none &none &none
+            &none            // Right edge row, inner
+            &none            // Right edge row, index
+            &none            // Right edge row, middle
+            &none            // Right edge row, ring
+            &none            // Right edge row, pinky
+
+            &none            // Left number row, outer
+            &kp N1           // Left number row, pinky
+            &kp N2           // Left number row, ring
+            &kp N3           // Left number row, middle
+            &kp N4           // Left number row, index
+            &kp N5           // Left number row, inner
+
+            &kp N6           // Right number row, inner
+            &kp N7           // Right number row, index
+            &kp N8           // Right number row, middle
+            &kp N9           // Right number row, ring
+            &kp N0           // Right number row, pinky
+            &none            // Right number row, outer
+
+            &none            // Left top row, outer
+            &kp B            // Left top row, pinky
+            &kp L            // Left top row, ring
+            &kp D            // Left top row, middle
+            &kp C            // Left top row, index
+            &kp V            // Left top row, inner
+
+            &kp J            // Right top row, inner
+            &kp Y            // Right top row, index
+            &kp O            // Right top row, middle
+            &kp U            // Right top row, ring
+            &kp COMMA        // Right top row, pinky
+            &none            // Right top row, outer
+
+            &none            // Left home row, outer
+            &hml LGUI N      // Left home row, pinky
+            &hml LALT R      // Left home row, ring
+            &hml LCTRL T     // Left home row, middle
+            &hml LSHFT S     // Left home row, index
+            &kp G            // Left home row, inner
+
+            &kp P            // Right home row, inner
+            &hmr RSHFT H     // Right home row, index
+            &hmr RCTRL A     // Right home row, middle
+            &hmr RALT E      // Right home row, ring
+            &hmr RGUI I      // Right home row, pinky
+            &none            // Right home row, outer
+
+            &none            // Left bottom row, outer
+            &kp X            // Left bottom row, pinky
+            &kp Q            // Left bottom row, ring
+            &kp M            // Left bottom row, middle
+            &kp W            // Left bottom row, index
+            &kp Z            // Left bottom row, inner
+
+            &none            // Left upper thumb cluster, inner
+            &none            // Left upper thumb cluster, middle
+            &none            // Left upper thumb cluster, outer
+
+            &none            // Right upper thumb cluster, outer
+            &none            // Right upper thumb cluster, middle
+            &none            // Right upper thumb cluster, inner
+
+            &kp K            // Right bottom row, inner
+            &kp F            // Right bottom row, index
+            &kp SQT          // Right bottom row, middle
+            &kp SEMI         // Right bottom row, ring
+            &kp DOT          // Right bottom row, pinky
+            &none            // Right bottom row, outer
+
+            &none            // Left last row, outer
+            &none            // Left last row, pinky
+            &none            // Left last row, ring
+            &none            // Left last row, middle
+            &none            // Left last row, index
+
+            &kp SPACE        // Left lower thumb cluster, inner
+            &kp ESC          // Left lower thumb cluster, middle
+            &none            // Left lower thumb cluster, outer
+
+            &none            // Right lower thumb cluster, outer
+            &kp RET          // Right lower thumb cluster, middle
+            &kp BSPC         // Right lower thumb cluster, inner
+
+            &none            // Right last row, index
+            &none            // Right last row, middle
+            &none            // Right last row, ring
+            &none            // Right last row, pinky
+            &none            // Right last row, outer
             >;
         };
     };
